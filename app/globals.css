@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.active-link {
+color: #422AFB;
+box-shadow: 5px 0px #422AFB;
+  }
+  #active-link{
+color: #422AFB;
+
+  }
+
+  .Appbar{
+
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opti*/
+
+
+    /* width: 100%;
+    position: fixed;
+    width: 70vw;
+    top: 20px;
+    right: 35px;
+    left:350px; */
+  }
+  body{
+    background-color: #F4F7FE;
+  }
+
+  #NavButtons:hover{
+background-color: #F5F5F5;  }
+
+.custom-tooltip {
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-radius: 5px;
+word-spacing: 5px;
+  font-size: 12px;
+  line-height: 30px;
+}
+.tooltip-item {
+  padding: 0px 5px;
+  font-size: smaller;
+  word-spacing: 0.5rem;
+}
+
+
+.tooltip-header {
+  background: #060606;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.custom-tooltip .dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 1px;
+  padding-left: 5px;
+}
+.apexcharts-xaxistooltip {
+  background: #444 !important;  /* Customize background color */
+  color: #fff !important;       /* Customize text color */
+  padding: 5px !important;      /* Customize padding */
+  border-radius: 3px !important;/* Customize border radius */
+  font-size: 12px !important;   /* Customize font size */
+  font-family: Arial, sans-serif !important; /* Customize font family */
+  box-shadow: none !important;  /* Remove box-shadow */
+  border: none !important;      /* Remove border */
+}
+
+.apexcharts-xaxistooltip:before {
+  border-bottom-color: #444 !important; /* Arrow color */
+}
+
+
+
+
+.custom-datagrid .MuiDataGrid-root .MuiDataGrid-row {
+  
+  border: none !important;
+}
+
+.custom-datagrid:hover .MuiDataGrid-root:hover .MuiDataGrid-row:hover {
+  background-color: transparent !important;
+}
+
+
+.custom-datagrid .MuiDataGrid-root .MuiDataGrid-cell {
+  /* Remove border within cells */
+  border: none !important;
+}
+
+.custom-datagrid .MuiDataGrid-root .MuiDataGrid-columnSeparator {
+  border: none !important;
+}
+.graycolor{
+  color: darkgray
+  ;
+}
+.thismonth{
+  color: gray !important;
+  background-color: lightgray;
+}.thismonth:hover{
+  color: #A3AED0 !important;
+  background-color: #E2E8F0 !important;
+}
+
+
+.custom-datagrid {
+  border: none !important;
+outline: none !important;
+box-shadow: none !important;
+}
+
+.custom-datagrid .MuiDataGrid-root {
+  border: none;
+}
+
+.custom-datagrid .MuiDataGrid-cell {
+  border: none !important;
+outline: none !important;
+box-shadow: none !important;
+text-align: left;
+font-weight: bolder;
+}
+
+.custom-datagrid .MuiDataGrid-row {
+  border: none !important;
+outline: none !important;
+box-shadow: none !important;
+text-align: left;
+}
+
+.custom-datagrid .MuiDataGrid-columnHeaders {
+  background-color: lightgrey;
+  /* border-bottom: 1px solid rgba(224, 224, 224, 1); */
+}
+
+.custom-datagrid .MuiDataGrid-columnHeaderTitle {
+  font-weight: bold;
+  color:#A0AEC0;
+  text-align: left;
+}
+.custom-datagrid .MuiDataGrid-columnHeaderTitle:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+.custom-datagrid .MuiDataGrid-row:hover {
+  background-color: transparent;
+}
+.custom-datagrid .MuiDataGrid-columnHeaderCheckbox .MuiDataGrid-columnHeaderTitleContainer {
+  display: none !important;
+}
+.custom-datagrid .MuiCheckbox-root {
+  /* Your styles for the checkboxes */
+  color:#A0AEC0;
+
+}
+.custom-datagrid .MuiCheckbox-root.Mui-checked {
+  color: #422AFB; /* Example color change when checked */
+}
