@@ -170,6 +170,3 @@ text-align: left;
 .custom-datagrid .MuiCheckbox-root.Mui-checked {
   color: #422AFB; /* Example color change when checked */
 }
-body{
-  font-display: auto;
-}
