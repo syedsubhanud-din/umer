@@ -12,12 +12,10 @@ color: #422AFB;
 
   .Appbar{
 
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-    backdrop-filter: blur(10px); /* Apply blur effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border */
+    background-color: rgba(255, 255, 255, 0); /* Semi-transparent background */
+    backdrop-filter: blur(20px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
     border-radius: 10px; /* Optional rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opti*/
 
 
     /* width: 100%;
@@ -27,12 +25,11 @@ color: #422AFB;
     right: 35px;
     left:350px; */
   }
-  body{
-    background-color: #F4F7FE;
-  }
+
 
   #NavButtons:hover{
-background-color: #F5F5F5;  }
+background-color: #F5F5F5;  
+}
 
 .custom-tooltip {
   background: rgba(0, 0, 0, 0.75);
@@ -82,7 +79,6 @@ word-spacing: 5px;
 
 
 
-
 .custom-datagrid .MuiDataGrid-root .MuiDataGrid-row {
   
   border: none !important;
@@ -114,6 +110,7 @@ word-spacing: 5px;
 }
 
 
+
 .custom-datagrid {
   border: none !important;
 outline: none !important;
@@ -136,16 +133,15 @@ font-weight: bolder;
   border: none !important;
 outline: none !important;
 box-shadow: none !important;
-text-align: left;
+text-align: left !important;
+font-family: Arial, Helvetica, sans-serif !important;
 }
 
-.custom-datagrid .MuiDataGrid-columnHeaders {
-  background-color: lightgrey;
-  /* border-bottom: 1px solid rgba(224, 224, 224, 1); */
-}
+
 
 .custom-datagrid .MuiDataGrid-columnHeaderTitle {
   font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
   color:#A0AEC0;
   text-align: left;
 }
@@ -170,3 +166,99 @@ text-align: left;
 .custom-datagrid .MuiCheckbox-root.Mui-checked {
   color: #422AFB; /* Example color change when checked */
 }
+
+
+body{
+background-color: red;
+}
+.custom-selected-row {
+  background-color: transparent !important; /* Override background-color */
+}
+.custom-checked-row {
+  background-color: rgba(0, 0, 0, 0); /* Change to your desired background color */
+}
+
+
+
+
+.custom-data-grid .MuiDataGrid-row:hover {
+  background-color: transparent !important; /* Remove hover background color */
+}
+
+.custom-data-grid .MuiDataGrid-row.Mui-selected {
+  background-color: transparent !important; /* Remove selected row background color */
+}
+.custom-data-grid .MuiDataGrid-row{
+text-align: center !important;
+font-family: Arial, Helvetica, sans-serif;
+}
+.custom-data-grid .MuiDataGrid-columnHeader {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+.custom-data-grid .MuiDataGrid-columnHeader:hover {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+.custom-data-grid .MuiDataGrid-columnHeaderTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-data-grid .MuiDataGrid-columnHeaderTitleContainer:hover {
+  background-color: inherit !important;
+}
+
+.custom-data-grid .MuiDataGrid-menuIcon,
+.custom-data-grid .MuiDataGrid-menuIconButton {
+  display: none !important; /* Hide the menu button */
+}
+
+
+.custom-data-grid .MuiDataGrid-columnHeader .MuiDataGrid-sortIcon,
+
+.custom-data-grid .MuiDataGrid-columnHeader:focus .MuiDataGrid-sortIcon,
+.custom-data-grid .MuiDataGrid-columnHeader:hover .MuiDataGrid-sortIcon {
+  display: none;
+}
+
+/* Remove column separator */
+.custom-data-grid .MuiDataGrid-columnSeparator {
+  display: none !important;
+}
+.custom-data-grid .MuiDataGrid-columnHeader[data-field='__check__'] {
+  display: none;
+}
+.custom-data-grid .MuiDataGrid-columnHeader:after {
+  display: none !important;
+}
+
+.custom-data-grid .MuiDataGrid-columnHeader:hover {
+  background-color: inherit !important;
+}
+.custom-data-grid .MuiDataGrid-columnHeader:focus {
+border: none !important;
+outline: none !important;
+box-shadow: none !important;
+}
+
+.custom-data-grid .MuiDataGrid-columnHeaderTitleContainer {
+  padding: 0 !important;
+}
+
+.custom-data-grid .MuiDataGrid-columnSeparator {
+  display: none !important;
+}
+
+.custom-data-grid .MuiDataGrid-iconButtonContainer {
+  display: none !important;
+}
+
+.custom-data-grid .MuiDataGrid-sortIcon {
+  display: none !important;
+}
+
+

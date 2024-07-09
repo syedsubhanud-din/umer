@@ -53,7 +53,8 @@ const data = [
 ];
 
 const containerStyle = {
-  backgroundColor: 'white',
+  marginTop:"80px",
+      backgroundColor:"#EDF1FA",/* Semi-transparent background */
   width: '100%', // Full width
   minHeight: '100vh', // Full viewport height
   display: 'flex',
@@ -191,6 +192,94 @@ const options = {
 
 
 
+
+
+
+
+
+
+
+
+const databarchart1 = [
+  {
+    name: 'Daily Traffic',
+    data: [20,30,40,10,45,50,30],
+  },
+]
+
+const options1: ApexCharts.ApexOptions = {
+  chart: {
+    type: 'bar',
+    height: 350,
+    toolbar: {
+      show: false,
+    },
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 7,
+      columnWidth: '50%',
+    },
+  },
+  fill: {
+    type: "gradient",
+    gradient: {
+      shade: "light",
+      type: "vertical",
+      shadeIntensity: 0.5,
+      gradientToColors: ["#491FFF","#9F89FF", "#ffffff"], // end color
+      inverseColors: true,
+      opacityFrom: 1,
+      opacityTo: 0,
+      stops: [],
+    },
+  },
+  dataLabels: {
+    enabled: false, // Disable data labels
+  },
+  xaxis: {
+    categories: ['00', '04', '08', '12', '14', '16', '18'],
+    labels: {
+      style: {
+        colors: '#9aa0ac',
+      },
+    },
+    axisBorder: {
+      show: false,
+    },
+    axisTicks: {
+      show: false,
+    },
+  },
+  yaxis: {
+    max: 50, // Increase the Y-axis limit
+    labels: {
+      show: false,
+    },
+  },
+  grid: {
+    show: false,
+  },
+  tooltip: {
+    enabled: false,
+  },
+  responsive: [
+    {
+      breakpoint: 1000,
+      options: {
+        plotOptions: {
+          bar: {
+            borderRadius: 5,
+          },
+        },
+      },
+    },
+  ],
+};
+
+
+
+
 interface Series {
   name: string;
   data: number[];
@@ -283,26 +372,69 @@ interface Series {
   }
 
   const columns: GridColDef[] = [
-    { field: 'name', headerName: 'Name', width: 150 },
+    { field: 'name', headerName: 'Name', width: 170 },
     { field: 'progress', headerName: 'Progress', width: 100 },
-    { field: 'quantity', headerName: 'Quantity', type: 'number', width: 110 },
-    { field: 'date', headerName: 'Date', type: 'date', width: 100 },
+    { field: 'quantity', headerName: 'Quantity', type: 'number', width: 100 },
+    { field: 'date', headerName: 'Date', width: 140 },
   ];
   
   const rows = [
-    { id: 1, name: 'Jon Snow', progress: '50%', quantity: 35, date: new Date(2024, 6, 8) },
-    { id: 2, name: 'Cersei Lannister', progress: '75%', quantity: 42, date: new Date(2024, 6, 8) },
-    { id: 3, name: 'Jaime Lannister', progress: '60%', quantity: 45, date: new Date(2024, 6, 8) },
-    { id: 4, name: 'Arya Stark', progress: '80%', quantity: 16, date: new Date(2024, 6, 8) },
-    { id: 5, name: 'Daenerys Targaryen', progress: '90%', quantity: 0, date: new Date(2024, 6, 8) }
-
+    { id: 1, name: 'Jon Snow', progress: '50%', quantity: 35, date: new Date(2024, 6, 8).toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' }) },
+    { id: 2, name: 'Cersei Lannister', progress: '75%', quantity: 42, date: new Date(2024, 6, 8).toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' }) },
+    { id: 3, name: 'Jaime Lannister', progress: '60%', quantity: 45, date: new Date(2024, 6, 8).toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' }) },
+    { id: 4, name: 'Arya Stark', progress: '80%', quantity: 16, date: new Date(2024, 6, 8).toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' }) },
+    { id: 5, name: 'Daenerys Targaryen', progress: '90%', quantity: 0, date: new Date(2024, 6, 8).toLocaleDateString('en-UK', { day: 'numeric', month: 'long', year: 'numeric' }) },
   ];
+  
+
+  const pieoptions: ApexCharts.ApexOptions = {
+    dataLabels: {
+      enabled: false, // Disable data labels on the chart
+    },
+    chart: {
+      type: 'pie',
+      height: 250, // Reduced height for a smaller chart
+      width: 250, // Added width to control the size
+    },
+    labels: ['Your files', 'System', 'Empty'], 
+    colors: ['#4318FF', '#6AD2FF', '#EFF4FB'],
+    legend: {
+      position: 'bottom', 
+      horizontalAlign: 'center',
+      itemMargin: {
+        horizontal: 10, // Adjusted margin for smaller size
+        vertical: 5, 
+      },
+    },
+    responsive: [
+      {
+        breakpoint: 480,
+        options: {
+          chart: {
+            width: 180, // Smaller width for responsive breakpoint
+          },
+          legend: {
+            position: 'bottom',
+          },
+        },
+      },
+    ],
+  };
+
+const pieseries = [63, 25,12];
 
 export default function Home() {
+
+
+  const [selectedRows, setSelectedRows] = React.useState<number[]>([2, 3, 4]); // Default selected rows
+
+  const handleSelectionChange = (newSelection) => {
+    setSelectedRows(newSelection.selectionModel);
+  }
   return (
     <>
       <CssBaseline />
-      <Container sx={containerStyle} maxWidth="lg" disableGutters>
+      <Container sx={containerStyle } maxWidth="lg"  disableGutters>
         <Box sx={{ flexGrow: 1, paddingTop: 3 }}>
           {/* Cards */}
           <Grid container spacing={2}>
@@ -367,7 +499,7 @@ export default function Home() {
               <Paper sx={{ p: 2, height: '100%' }}>
             <Typography variant="h6" sx={{ fontWeight: 'bolder' }}>Check Tables</Typography>
 
-            <div className="datagrid-container">
+            <div className="datagrid-container custom-data-grid">
             <DataGrid
         rows={rows}
         columns={columns}
@@ -378,7 +510,12 @@ export default function Home() {
           },
         }}
         pageSizeOptions={[5, 10]}
-         checkboxSelection
+        checkboxSelection
+        rowSelectionModel={selectedRows}
+       onRowSelectionModelChange={handleSelectionChange}
+
+          // Apply custom class based on selection
+
         hideFooter
         
       />
@@ -388,34 +525,23 @@ export default function Home() {
 
             <Grid item xs={12} md={3}>
               <Paper sx={{ p: 2, height: '100%' }}>
-                <Typography variant="h6">Daily Traffic</Typography>
-                <Typography variant="body1">2.579</Typography>
-                <Typography variant="subtitle1" color="green">+2.45%</Typography>
-                <BarChart width={500} height={300}
-                  series={[
-                    { data: [3, 4, 1, 6, 5], stack: 'A' },
-                    { data: [4, 3, 1, 5, 8], stack: 'A' },
-                    { data: [4, 2, 5, 4, 1], stack: 'B' },
-                    { data: [2, 8, 1, 3, 1], stack: 'B'},
-                    { data: [10, 6, 5, 8, 9]},
-                  ]}
-                />
+                <Box sx={{display:"flex",justifyContent:"space-between"}}>
+                <Typography variant="h8" >Daily Traffic</Typography>
+
+                <Typography variant="caption" color="green"><ArrowDropUpIcon fontSize='small' />+2.45%</Typography>
+                </Box>
+                <Typography variant="h4" sx={{ fontWeight: 'bolder' }}>2.579 <Typography variant="caption">Visitors</Typography></Typography>
+                <Box sx={{marginTop:"100px"}}>
+          <ReactApexChart options={options1} series={databarchart1} type="bar" height={210} />
+
+              </Box>
+
               </Paper>
             </Grid>
             <Grid item xs={12} md={3}>
               <Paper sx={{ p: 2, height: '100%' }}>
                 <Typography variant="h6">Your Pie Charts</Typography>
-                <PieChart width={300} height={300}
-                  series={[
-                    {
-                      data: [
-                        { id: 0, value: 10 },
-                        { id: 1, value: 15 },
-                        { id: 2, value: 20},
-                      ],
-                    },
-                  ]}
-                />
+                <ReactApexChart options={pieoptions} series={pieseries} type="pie"  height={250}  />
               </Paper>
             </Grid>
           </Grid>

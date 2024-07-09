@@ -89,13 +89,16 @@ export default function PrimarySearchAppBar() {
     const { activeLink } = useActiveLink();
     return (
         <Box sx={{ flexGrow: 1, marginTop: '20px', marginRight: '20px', display: 'flex', justifyContent: 'flex-end' }}>
-            <AppBar position="static" sx={{ 
-                width: '75vw',height:'15vh',
+            <AppBar position="fixed" sx={{ 
+                top:0,
+                zIndex:999,
+                width: '79vw',height:'12vh',
                 background: 'rgba(0, 0, 0, 0)',
                 borderRadius: '16px',
-                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-                backdropFilter: 'blur(1.7px)',
-                WebkitBackdropFilter: 'blur(1.7px)'
+                boxShadow: 'none',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                marginBottom:'50px'
             }}>
                 <Toolbar disableGutters>
                     <Typography
